@@ -15,18 +15,18 @@ echo "🔍 Analyzing wallet: $WALLET"
 echo "Chain: $CHAIN"
 echo ""
 
-# Check if user holds BANKR for free access
-BANKR_BALANCE=$(node scripts/check-bankr-balance.js "$WALLET")
+# Check if user holds KELLYCLAUDE for free access
+KELLYCLAUDE_BALANCE=$(node scripts/check-bankr-balance.js "$WALLET")
 
-if (( $(echo "$BANKR_BALANCE < 1000" | bc -l) )); then
-  echo "⚠️  Payment required (or hold 1000+ \$BANKR for free access)"
-  echo "Current BANKR balance: $BANKR_BALANCE tokens"
+if (( $(echo "$kellyclaude_BALANCE < 1000" | bc -l) )); then
+  echo "⚠️  Payment required (or hold 1000+ \$kellyclaude for free access)"
+  echo "Current KELLYCLAUDE balance: $kellyclaude_BALANCE tokens"
   echo ""
   echo "Pay \$5 in USDC to: [Payment address]"
   exit 1
 fi
 
-echo "✅ Access granted (BANKR holder)"
+echo "✅ Access granted (KELLYCLAUDE holder)"
 echo ""
 
 # Fetch portfolio data
@@ -79,4 +79,4 @@ fi
 # Summary
 echo "=== Summary ==="
 echo "Portfolio analyzed successfully ✅"
-echo "Powered by \$BANKR token"
+echo "Powered by \$kellyclaude token"

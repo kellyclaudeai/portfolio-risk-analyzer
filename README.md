@@ -1,13 +1,13 @@
 # Portfolio Risk & Optimization Analyzer
 
-**Turn portfolio analysis fees into $BANKR buy pressure** 🤖💰
+**Turn portfolio analysis fees into $kellyclaude buy pressure** 🤖💰
 
 ## What is This?
 
 An AI-powered crypto portfolio risk analyzer that:
 1. Scans wallets and calculates risk scores
-2. Requires payment ($5 per scan) OR holding 1000+ $BANKR tokens
-3. **Automatically swaps 100% of fees to buy back $BANKR**
+2. Requires payment ($5 per scan) OR holding 1000+ $kellyclaude tokens
+3. **Automatically swaps 100% of fees to buy back $kellyclaude**
 4. Creates constant buy pressure on the token
 
 ## Quick Start
@@ -35,12 +35,12 @@ npm start
 ## Pricing
 
 - **$5 per scan** (one-time)
-- **FREE for BANKR holders** (≥1000 tokens)
-- 100% of fees → Uniswap → $BANKR buyback
+- **FREE for KELLYCLAUDE holders** (≥1000 tokens)
+- 100% of fees → Uniswap → $kellyclaude buyback
 
 ## Token Address
 
-$BANKR: `0x50D2280441372486BeecdD328c1854743EBaCb07`
+$kellyclaude: `0x50D2280441372486BeecdD328c1854743EBaCb07`
 
 ## Features
 
@@ -53,17 +53,17 @@ $BANKR: `0x50D2280441372486BeecdD328c1854743EBaCb07`
 
 ## How It Works
 
-1. User pays $5 USDC (or holds 1000+ BANKR)
+1. User pays $5 USDC (or holds 1000+ KELLYCLAUDE)
 2. AI scans wallet across chains
 3. Calculates risk score & generates recommendations
 4. Fee is collected in USDC
-5. **Every hour: USDC → BANKR via Uniswap**
+5. **Every hour: USDC → KELLYCLAUDE via Uniswap**
 6. Buy pressure + token burns/distribution
 
 ## Monetization Example
 
 - 100 scans/day = $500/day revenue
-- $500 USDC → ~62,500 BANKR tokens (at $0.008)
+- $500 USDC → ~62,500 KELLYCLAUDE tokens (at $0.008)
 - $15,000/month buy pressure
 - Self-sustaining token economy
 

@@ -8,9 +8,9 @@ const app = express();
 app.use(express.json());
 
 // Constants
-const BANKR_TOKEN = process.env.BANKR_TOKEN || '0x50D2280441372486BeecdD328c1854743EBaCb07';
+const KELLYCLAUDE_TOKEN = process.env.KELLYCLAUDE_TOKEN || '0x50D2280441372486BeecdD328c1854743EBaCb07';
 const SCAN_PRICE = 5; // $5 USD
-const FREE_HOLDER_THRESHOLD = 1000; // 1000 BANKR tokens
+const FREE_HOLDER_THRESHOLD = 1000; // 1000 KELLYCLAUDE tokens
 
 // RPC Providers
 const providers = {
@@ -26,13 +26,13 @@ const ERC20_ABI = [
   "function symbol() view returns (string)"
 ];
 
-// Check if user has access (paid or holds BANKR)
+// Check if user has access (paid or holds KELLYCLAUDE)
 async function checkAccess(wallet) {
   try {
-    // Check BANKR balance on all chains
+    // Check KELLYCLAUDE balance on all chains
     for (const [chain, provider] of Object.entries(providers)) {
       try {
-        const bankrContract = new ethers.Contract(BANKR_TOKEN, ERC20_ABI, provider);
+        const bankrContract = new ethers.Contract(KELLYCLAUDE_TOKEN, ERC20_ABI, provider);
         const balance = await bankrContract.balanceOf(wallet);
         const decimals = await bankrContract.decimals();
         const balanceFormatted = parseFloat(ethers.formatUnits(balance, decimals));
@@ -209,7 +209,7 @@ app.post('/api/analyze', async (req, res) => {
     if (!access.access) {
       return res.status(402).json({
         error: 'Payment required',
-        message: 'Send $5 USDC or hold 1000+ BANKR tokens for free access',
+        message: 'Send $5 USDC or hold 1000+ KELLYCLAUDE tokens for free access',
         bankr_balance: access.balance || 0
       });
     }
@@ -260,7 +260,7 @@ cron.schedule('0 * * * *', async () => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`🚀 Portfolio Risk Analyzer API running on port ${PORT}`);
-  console.log(`💎 BANKR Token: ${BANKR_TOKEN}`);
+  console.log(`💎 KELLYCLAUDE Token: ${KELLYCLAUDE_TOKEN}`);
   console.log(`💰 Scan Price: $${SCAN_PRICE}`);
-  console.log(`🎁 Free Access: ${FREE_HOLDER_THRESHOLD}+ BANKR`);
+  console.log(`🎁 Free Access: ${FREE_HOLDER_THRESHOLD}+ KELLYCLAUDE`);
 });

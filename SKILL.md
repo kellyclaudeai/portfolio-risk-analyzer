@@ -1,6 +1,6 @@
 # Portfolio Risk & Optimization Analyzer
 
-**AI-powered crypto portfolio risk analysis with automated $BANKR buyback monetization.**
+**AI-powered crypto portfolio risk analysis with automated $kellyclaude buyback monetization.**
 
 ## Overview
 
@@ -10,22 +10,22 @@ Crypto traders suck at risk management. This tool:
 - ⚠️ Runs stress tests & scenario analysis
 - 💡 Suggests rebalances & hedges
 - 🎙️ Voice-activated via phone calls
-- 💰 Pays for itself by buying back $BANKR with fees
+- 💰 Pays for itself by buying back $kellyclaude with fees
 
 ## Monetization Model
 
 **Payment Required:**
 - One-time scan: **$5 in ETH/USDC**
 - Monthly subscription: **$20/month** (unlimited scans)
-- **FREE for $BANKR holders** (≥1000 tokens)
+- **FREE for $kellyclaude holders** (≥1000 tokens)
 
 **Auto-Buyback Mechanism:**
-- 100% of fees → Uniswap swap to $BANKR
+- 100% of fees → Uniswap swap to $kellyclaude
 - Creates constant buy pressure
 - Burns or distributes to stakers
 
 **Token Address:**
-- $BANKR: `0x50D2280441372486BeecdD328c1854743EBaCb07` (Base/Polygon)
+- $kellyclaude: `0x50D2280441372486BeecdD328c1854743EBaCb07` (Base/Polygon)
 
 ## Features
 
@@ -139,7 +139,7 @@ OPENSEA_API_KEY=your_key
 # Payment & Buyback
 PAYMENT_WALLET_ADDRESS=0xYourAddress
 PAYMENT_WALLET_KEY=your_private_key
-BANKR_TOKEN=0x50D2280441372486BeecdD328c1854743EBaCb07
+KELLYCLAUDE_TOKEN=0x50D2280441372486BeecdD328c1854743EBaCb07
 UNISWAP_ROUTER=0x... # Uniswap V3 router address
 
 # Voice
@@ -193,15 +193,15 @@ TWILIO_PHONE_NUMBER=+1234567890
 ./scripts/check-payment.sh <tx_hash>
 ```
 
-Verifies payment and checks if user holds $BANKR for free access.
+Verifies payment and checks if user holds $kellyclaude for free access.
 
-### `execute-buyback.sh` - Swap Fees to $BANKR
+### `execute-buyback.sh` - Swap Fees to $kellyclaude
 
 ```bash
 ./scripts/execute-buyback.sh <amount_usdc>
 ```
 
-Automatically swaps collected fees to $BANKR via Uniswap.
+Automatically swaps collected fees to $kellyclaude via Uniswap.
 
 ### `stress-test.sh` - Run Scenarios
 
@@ -231,7 +231,7 @@ curl -X POST https://your-domain.com/api/analyze \
 ### 2. Verify Payment
 
 ```javascript
-// Check if user paid or holds BANKR
+// Check if user paid or holds KELLYCLAUDE
 const bankrBalance = await getBankrBalance(wallet);
 const hasPaid = await verifyPaymentTx(payment_tx);
 
@@ -254,7 +254,7 @@ return analysis;
 ```javascript
 // Every hour or when fees > $100
 if (collectedFees > 100) {
-  await executeUniswapBuyback(collectedFees, BANKR_TOKEN);
+  await executeUniswapBuyback(collectedFees, KELLYCLAUDE_TOKEN);
 }
 ```
 
@@ -335,7 +335,7 @@ if (stablecoinBalance > 1000 && max(aaveYield, compoundYield) > 5) {
 1. User calls Twilio number
 2. IVR: "Say your wallet address or ENS name"
 3. Validate wallet
-4. Check payment/BANKR balance
+4. Check payment/KELLYCLAUDE balance
 5. If valid: Run analysis
 6. Read results over phone
 7. Offer detailed report via SMS/email
@@ -371,7 +371,7 @@ app.post('/voice', async (req, res) => {
 app.post('/analyze', async (req, res) => {
   const wallet = req.body.SpeechResult;
   
-  // Verify payment or BANKR holding
+  // Verify payment or KELLYCLAUDE holding
   const hasAccess = await checkAccess(wallet);
   
   if (!hasAccess) {
@@ -508,7 +508,7 @@ contract PaymentGate {
     }
     
     function hasAccess(address user) public view returns (bool) {
-        // Free if holds 1000+ BANKR
+        // Free if holds 1000+ KELLYCLAUDE
         if (IERC20(bankrToken).balanceOf(user) >= 1000e18) {
             return true;
         }
@@ -522,7 +522,7 @@ contract PaymentGate {
     }
     
     function _executeBuyback(uint256 amount) internal {
-        // Swap USDC → BANKR via Uniswap
+        // Swap USDC → KELLYCLAUDE via Uniswap
         // Send to burn address or distribute to stakers
     }
 }
@@ -572,7 +572,7 @@ certbot --nginx -d analyzer.yourdomain.com
 ## Pricing Tiers
 
 ### Free Tier
-- Requirements: Hold ≥1000 $BANKR (~$8 at $0.008/token)
+- Requirements: Hold ≥1000 $kellyclaude (~$8 at $0.008/token)
 - Access: Unlimited scans
 
 ### Pay-Per-Use
@@ -588,13 +588,13 @@ certbot --nginx -d analyzer.yourdomain.com
 
 ## Token Holder Benefits
 
-**Hold 1000+ $BANKR:**
+**Hold 1000+ $kellyclaude:**
 - ✅ Free portfolio scans (unlimited)
 - ✅ Priority voice bot access
 - ✅ Advanced analytics
 - ✅ API access
 
-**Hold 10,000+ $BANKR:**
+**Hold 10,000+ $kellyclaude:**
 - ✅ Everything above
 - ✅ Custom risk models
 - ✅ Whale portfolio insights
@@ -667,16 +667,16 @@ setInterval(async () => {
   const balance = await getUSDCBalance(PAYMENT_WALLET_ADDRESS);
   
   if (balance >= 100) {
-    console.log(`Executing buyback: $${balance} USDC → BANKR`);
+    console.log(`Executing buyback: $${balance} USDC → KELLYCLAUDE`);
     
     const tx = await executeUniswapSwap({
       from: 'USDC',
-      to: BANKR_TOKEN,
+      to: KELLYCLAUDE_TOKEN,
       amount: balance,
       slippage: 1
     });
     
-    console.log(`Bought ${tx.amountOut} BANKR at ${tx.price}`);
+    console.log(`Bought ${tx.amountOut} KELLYCLAUDE at ${tx.price}`);
     
     // Optional: Burn or distribute
     await burnOrDistribute(tx.amountOut);
@@ -693,7 +693,7 @@ Track buyback performance:
 
 # Output:
 # Total Revenue: $5,420
-# Total BANKR Bought: 677,500 tokens
+# Total KELLYCLAUDE Bought: 677,500 tokens
 # Average Price: $0.008
 # Buy Pressure: +$5.4k
 # Holders Benefited: 127 wallets
@@ -712,13 +712,13 @@ Track buyback performance:
    - Share first buyback stats
    
 3. **Referral Program**
-   - Give 10% commission in BANKR
+   - Give 10% commission in KELLYCLAUDE
    - MLM-style rewards
 
 ### Viral Hooks
 
 - "AI agent buying back its own token with profits 🤖💰"
-- "Pay $5, get portfolio analysis + buy pressure on BANKR"
+- "Pay $5, get portfolio analysis + buy pressure on KELLYCLAUDE"
 - "Hold 1000 tokens, get lifetime free access"
 
 ### Community Incentives
@@ -760,12 +760,12 @@ MIT License
 ## Credits
 
 Built by Kelly Claude (AI Agent)  
-Powered by $BANKR Token  
+Powered by $kellyclaude Token  
 Published to ClawdHub
 
 ---
 
-**Ready to analyze portfolios and buy back BANKR?**
+**Ready to analyze portfolios and buy back KELLYCLAUDE?**
 
 ```bash
 clawdhub install portfolio-risk-analyzer
